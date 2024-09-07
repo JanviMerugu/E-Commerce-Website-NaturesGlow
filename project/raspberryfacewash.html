@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+  
+    <title>Nature's Glow Product Page</title>
+    <style>
+
+        /* Basic Reset and Styling */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Header */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 10%;
+    background-color: #333;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+    font-size: 24px;
+    color: white;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+}
+
+nav ul li {
+    margin-left: 20px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+nav ul li a:hover {
+    text-decoration: underline;
+}
+
+.cart-icon {
+    margin-left: 10px;
+    font-size: 18px;
+    color: whitesmoke;
+    text-decoration: none;
+}
+
+.cart-icon i {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+/* Product Container */
+.product-container {
+    display: flex;
+    flex-wrap: wrap; /* Add this for wrapping content on smaller screens */
+    margin: 20px;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    max-width: 1500px;
+    background-color: #f9f9f9;
+    justify-content: center; /* Center content for better alignment */
+}
+
+.product-image img {
+    max-width: 100%; /* Make the image responsive */
+    border-radius: 8px;
+}
+
+.product-details {
+    margin-left: 20px;
+    max-width: 500px; /* Restrict maximum width for content */
+}
+
+.product-name {
+    font-size: 24px;
+    color: #333;
+}
+
+.product-description {
+    margin: 10px 0;
+    color: #555;
+}
+
+.product-price {
+    font-size: 20px;
+    color: #e74c3c;
+}
+
+.buynow, .add-to-cart {
+    padding: 10px 15px;
+    background-color: #27ae60;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-right: 10px; /* Add spacing between buttons */
+}
+
+.buynow:hover, .add-to-cart:hover {
+    background-color: #2ecc71;
+}
+
+/* Reviews Container */
+.reviews-container {
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    max-width: 1500px;
+}
+
+.reviews-container h3 {
+    font-size: 22px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.review {
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.review-author {
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+.review-text {
+    font-size: 16px;
+    color: #666;
+    margin-bottom: 5px;
+}
+
+.review-rating {
+    color: #ff9800;
+    font-size: 14px;
+}
+
+/* Footer */
+footer {
+    background-color: #333;
+    padding: 20px 10%;
+    text-align: center;
+    border-top: 1px solid #dddddd;
+}
+
+footer p {
+    margin-bottom: 10px;
+    color: white;
+}
+
+footer ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+footer li {
+    color: white;
+}
+
+footer ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 14px;
+}
+
+footer ul li a:hover {
+    color: #e4a69a; /* Soft pink color */
+}
+
+/* Responsive Design with Media Queries */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav ul {
+        flex-wrap: wrap; /* Allow wrapping */
+        justify-content: center; /* Center the navigation links */
+        gap: 10px; /* Reduce gap for smaller screens */
+    
+    }
+
+    nav ul li {
+        margin: 10px 0;
+    }
+
+    .product-container {
+        flex-direction: row; /* Stack items vertically */
+        align-items: center; /* Center items */
+    }
+
+    .product-details {
+        margin-left: 0; /* Remove left margin */
+        text-align: center; /* Center text */
+        margin-top: 20px; /* Add top margin */
+        flex-direction: row;
+        align-items: center;
+        width:100%;
+    }
+
+    .product-image img {
+        max-width: 100%; /* Make images full-width */
+    }
+    .product-video {
+        width: 90%;
+        flex-direction: row;
+    }
+
+    .reviews-container {
+        width: 90%; /* Reduce width for better display */
+    }
+}
+
+@media (max-width: 480px) {
+    .logo {
+        font-size: 20px;
+    }
+
+    .product-name {
+        font-size: 20px;
+    }
+
+    .cta-button, .add-to-cart {
+        margin-bottom: 10px; /* Make buttons full-width */
+    }
+
+    footer ul {
+        flex-direction: column; /* Stack footer links vertically */
+        gap: 5px;
+    }
+}
+
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">Nature's Glow</div>
+        <nav>
+            <ul>
+                <li><a href="homepg.html">Home</a></li>
+                <li><a href="products.html">Products</a></li>
+                <li><a href="aboutus.html">AboutUs</a></li>
+                <li><a href="contactus.html">ContactUs</a></li>
+                <li><a href="cart.html" class="cart-icon"><i class="fas fa-shopping-cart"></i></a></li>
+
+
+
+                
+            </ul>
+        </nav>
+    </header>
+
+
+    <div class="product-container">
+        <div class="product-image">
+            <img src="cosmetics1/raspberryfacewash.webp" alt="Nature's Glow Hydrating Serum">
+        </div>
+        <div class="product-details">
+            <h2 class="product-name">Raspberry Facewash</h2>
+            <p class="product-description">
+                Naturali Raspberry Face Wash is a refreshing cleanser infused with the goodness of raspberries. It gently cleanses the skin while providing a burst of antioxidants, helping to rejuvenate and brighten the complexion. The natural raspberry extracts work to hydrate and soften the skin, leaving it feeling smooth, refreshed, and radiant. Ideal for all skin types, this face wash adds a touch of fruity freshness to your skincare routine.
+            </p>
+            <div class="product-video">
+            <video width="500" height="300" controls>
+                <source src="cosmetics1/raspberryfacewash.mp4" type="video/mp4">
+            </video>
+            </div>
+            <p class="product-price">MPR : 208</p>
+            <button class="buynow">Buy Now</button>
+            <button class="add-to-cart">Add to Cart</button>
+        </div>
+    </div>
+
+
+    <div class="reviews-container">
+        <h3>Customer Reviews</h3>
+        <div class="review">
+            <p class="review-author">Jane Doe</p>
+            <p class="review-text">"Absolutely love this serum! It leaves my skin feeling hydrated and smooth without any greasiness."</p>
+            <p class="review-rating">Rating: ★★★★★</p>
+        </div>
+        <div class="review">
+            <p class="review-author">John Smith</p>
+            <p class="review-text">"A must-have for anyone looking for a natural skincare solution. My skin has never looked better!"</p>
+            <p class="review-rating">Rating: ★★★★☆</p>
+        </div>
+        <div class="review">
+            <p class="review-author">Emily Johnson</p>
+            <p class="review-text">" It works well for sensitive skin, though!"</p>
+            <p class="review-rating">Rating: ★★★☆☆</p>
+        </div>
+        <footer>
+        <p>&copy; 2024 Nature's Glow . All rights reserved.</p>
+        <ul>
+            <li>Privacy Policy</li>
+            <li>Terms of Service</li>
+        </ul>
+    </footer>
+
+</body>
+</html>
+
+
+

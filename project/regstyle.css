@@ -1,0 +1,92 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f7f0eb; /* Light beige background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.registration-container {
+    background-color: #ffffff;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 450px;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+h1 {
+    margin-bottom: 20px;
+    color:rgb(171, 26, 26); /* Soft pink color */
+}
+
+p {
+    margin-bottom: 30px;
+    color:black;
+}
+
+.input-group {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+label {
+    font-size: 14px;
+    color: #555555;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="tel"] {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #dddddd;
+    border-radius: 5px;
+    box-sizing: border-box;
+    background-color: #f7f0eb;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    background-color: rgb(182, 42, 42); /* Soft pink color */
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #d48d7f; /* Darker pink on hover */
+}
+
+.login {
+    margin-top: 20px;
+    color: #555555;
+}
+
+.login a {
+    color:rgb(185, 53, 53);
+    text-decoration: none;
+}
+
+.login a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    .registration-container {
+        padding: 20px;
+        margin: 10px;
+    }
+}
