@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order History - Nature's Glow</title>
+    <style>
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+            margin: 0;
+            padding: 0;
+        }
+        
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 10%;
+            background-color: #333;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .logo {
+            font-size: 24px;
+            color:white;
+        
+        }
+        
+         nav ul {
+            list-style: none;
+            display: flex;
+        }
+        
+         nav ul li {
+            margin-left: 20px;
+        }
+        
+         nav ul li a {
+            color: #fff;
+              text-decoration: none;
+            font-size: 16px;
+        }
+        
+         nav ul li a:hover {
+            text-decoration: underline;
+        }
+        h2 {
+            color: #333;
+        }
+        
+        #order-history-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        
+        .order-item {
+            background-color: white;
+            border: 1px solid #ddd;
+            padding: 20px;
+            border-radius: 8px;
+            width: 300px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        
+        .order-item img {
+            width: 100%;
+            height: auto;
+            border-radius: 5px;
+        }
+        
+        .order-item h3 {
+            margin-top: 10px;
+            font-size: 1.2em;
+            color: #333;
+        }
+        
+        .order-item p {
+            color: #666;
+        }
+        
+        footer {
+            background-color:#333;
+            padding: 20px 10%;
+            text-align: center;
+            border-top: 1px solid #dddddd;
+        }
+        
+        footer p {
+            margin-bottom: 10px;
+            color: white;
+        }
+        
+        footer ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+        footer li{
+            color: white;
+        }
+        
+        footer ul li a {
+            text-decoration: none;
+            color:white;
+            font-size: 14px;
+        }
+        
+        footer ul li a:hover {
+            color: #e4a69a; /* Soft pink color */
+        }
+        /* Tablet Devices */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column; /* Stack header elements vertically */
+        align-items: center;
+        padding: 15px 5%; /* Adjust padding */
+    }
+
+    nav ul {
+        flex-direction: column; /* Stack navigation items vertically */
+        align-items: center; /* Center-align navigation items */
+        padding: 0;
+        margin: 0;
+    }
+
+    nav ul li {
+        margin: 10px 0; /* Add spacing between navigation items */
+    }
+
+    #order-history-container {
+        padding: 10px; /* Reduce padding */
+        gap: 15px; /* Adjust gap */
+    }
+
+    .order-item {
+        width: 100%; /* Full width for order items */
+        max-width: 500px; /* Max width for readability */
+        margin: 0 auto; /* Center items */
+    }
+}
+
+/* Mobile Devices */
+@media (max-width: 480px) {
+    body {
+        padding: 10px; /* Reduce body padding */
+    }
+
+    header {
+        padding: 10px 5%; /* Reduce header padding */
+    }
+
+    .logo {
+        font-size: 20px; /* Smaller logo font size */
+    }
+
+    nav ul li a {
+        font-size: 14px; /* Smaller font size for navigation links */
+    }
+
+    h2 {
+        padding: 10px 5%; /* Adjust padding */
+        font-size: 20px; /* Adjust heading size */
+    }
+
+    #order-history-container {
+        padding: 0; /* Remove padding */
+        gap: 10px; /* Smaller gap */
+    }
+
+    .order-item {
+        width: 100%; /* Full width */
+        max-width: 100%; /* Max width for mobile */
+        margin: 0 auto; /* Center align */
+        padding: 15px; /* Adjust padding */
+    }
+
+    .order-item h3 {
+        font-size: 1em; /* Adjust heading size */
+    }
+
+    .order-item p {
+        font-size: 14px; /* Smaller font size */
+    }
+    footer ul {
+        flex-direction: column; /* Stack footer links vertically */
+        gap: 10px;
+    }
+}
+
+        
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">Nature's Glow</div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="products.html">Products</a></li>
+                <li><a href="aboutus.html">AboutUs</a></li>
+                <li><a href="contactus.html">ContactUs</a></li>
+                <li><a href="cart.html" class="cart-icon"><i class="fas fa-shopping-cart"></i></a></li>
+              </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h2>Your Order History</h2>
+        <div id="order-history-container">
+            <!-- Orders will be dynamically loaded here -->
+        </div>
+    </main>
+    <footer>
+        <p>&copy; 2024 Nature's Glow . All rights reserved.</p>
+        <ul>
+            <li>Privacy Policy</li>
+            <li>Terms of Service</li>
+        </ul>
+    </footer>
+
+
+    <script>
+
+        // Sample data (in a real scenario, this would come from a database or API)
+      // Function to display the order history
+function displayOrderHistory() {
+    const orderHistoryContainer = document.getElementById('order-history-container');
+    const cart = JSON.parse(localStorage.getItem('cart')) || []; // Retrieve cart from local storage
+
+    orderHistoryContainer.innerHTML = ''; // Clear existing content
+
+    if (cart.length === 0) {
+        orderHistoryContainer.innerHTML = '<p>Your order history is empty. Add some products to the cart!</p>';
+        return;
+    }
+
+    cart.forEach(product => {
+        const orderItem = document.createElement('div');
+        orderItem.classList.add('order-item');
+
+        orderItem.innerHTML = `
+            <img src="${product.image}" alt="${product.name}">
+            <h3>${product.name}</h3>
+            <p>Your order will be in 5 days.</p>
+        `;
+
+        orderHistoryContainer.appendChild(orderItem);
+    });
+}
+
+// Load order history on page load
+window.onload = displayOrderHistory;
+
+
+    </script>
+</body>
+</html>

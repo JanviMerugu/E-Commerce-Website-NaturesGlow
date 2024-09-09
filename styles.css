@@ -1,0 +1,87 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f7f0eb; /* Light beige background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.login-container {
+    background-color: #ffffff;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+}
+
+h1 {
+    margin-bottom: 20px;
+    color: rgb(193, 46, 46) /* Soft pink color */
+}
+
+p {
+    margin-bottom: 30px;
+    color:black;
+}
+
+
+.input-group {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+label {
+    font-size: 14px;
+    color: #555555;
+}
+
+input[type="text"],
+input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #dddddd;
+    border-radius: 5px;
+    box-sizing: border-box;
+    background-color: #f7f0eb;
+}
+
+.btn{
+        background-color: #e67e22;;
+        color: white;
+        padding: 10px;
+        text-decoration: none;
+        border: none;
+        border-radius: 5px;
+        width: 100px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+        align-items: center;
+        display: flex;
+        justify-content: center;
+        margin: 10px auto;
+         
+    
+}
+.btn:hover {
+    background-color:rgb(215, 110, 12); 
+}
+
+.register {
+    margin-top: 20px;
+    color: #555555;
+}
+
+.register a {
+    color: rgb(182, 31, 31);
+    text-decoration: none;
+}
+
+.register a:hover {
+    text-decoration: underline;
+}
