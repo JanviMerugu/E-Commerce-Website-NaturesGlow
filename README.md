@@ -46,7 +46,3 @@ Welcome to Nature's Glow, a website dedicated to offering natural, eco-friendly 
 - **HTML**: Markup language for creating the structure of the web pages.
 - **CSS**: Styling the visual elements of the website.
 - **JavaScript**: Providing dynamic functionalities and interactivity.
-
----
-
-Feel free to let me know if you need further updates or enhancements for "Nature's Glow" or any additional features!
